@@ -32,3 +32,11 @@
 "Planck":
   - firstname: ["Max"]
     url: https://en.wikipedia.org/wiki/Max_Planck
+
+"Kokel":
+  - firstname: ["Harsha Kokel", "Harsha"]
+    url: https://harshakokel.com/
+
+"Natarajan":
+  - firstname: ["Sriraam", "Sriraam Natarajan"]
+    url: https://personal.utdallas.edu/~sriraam.natarajan/

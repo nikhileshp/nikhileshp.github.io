@@ -7,11 +7,12 @@
 // Colors
 $red-color:           #FF3636 !default;
 $red-color-dark:      #B71C1C !default;
-$orange-color:        #F29105 !default;
+$orange-color:        #ff9807 !default;
+$light-orange-color:  lighten($orange-color,20%);
 $blue-color:          #0076df !default;
 $blue-color-dark:     #00369f !default;
 $cyan-color:          #2698BA !default;
-$light-cyan-color:    lighten($cyan-color, 25%);
+$light-cyan-color:    lighten($cyan-color, 50%);
 $green-color:         #00ab37 !default;
 $green-color-lime:    #B7D12A !default;
 $green-color-dark:    #009f06 !default;
@@ -25,6 +26,7 @@ $yellow-color:        #efcc00 !default;
 
 $grey-color:          #828282 !default;
 $grey-color-light:    lighten($grey-color, 40%);
+$grey-color-very-light: lighten($grey-color, 99%);
 $grey-color-dark:     #1C1C1D;
 $grey-900:            #212529;
 

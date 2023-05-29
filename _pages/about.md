@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Ph.D. Student <br> <a href='http://www.utdallas.edu'>The University of Texas at Dallas</a>
 
 profile:
   align: right
