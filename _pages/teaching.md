@@ -2,11 +2,16 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Few of the courses in which I worked as a TA
 nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+**CSE4020** - Introduction to Machine Learning &nbsp; *(Fall 2019)*
+<br><small>Vellore Institute of Tehnology</small>
 
-Organize your courses by years, topics, or universities, however you like!
+**CS4341** - Digital Logic and Computer Design &nbsp;*(Spring 2021)*
+<br><small>The University of Texas at Dallas</small>
+
+**CS 6375** - Machine Learning &nbsp; *(Fall 2022, Spring 2023)*
+<br><small>The University of Texas at Dallas</small>
