@@ -28,13 +28,6 @@ module ExternalPosts
         ]
       })
       
-      req_options = {
-        use_ssl: uri.scheme == "https",
-      }
-      
-      response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-        http.request(request)
-      end
       
       req_options = {
         use_ssl: uri.scheme == "https",
@@ -44,36 +37,43 @@ module ExternalPosts
         http.request(request)
       end
       
-      page = response.body
-      results = JSON.parse(page)["results"]
+      status = response.code
 
-      
-      path = site.in_source_dir("_posts/newpost.md")
-      # slug = 'new_post'
-      # path = site.in_source_dir("_posts/#{slug}.md")
-
-      results.each do |e|
-        if e["properties"]["Status"]["status"]["name"] != "Not started"
-          doc = Jekyll::Document.new(
-            path, { :site => site, :collection => site.collections['posts'] }
-          )
-          doc.data['external_source'] = e["properties"]["Authors"]["rich_text"].first()["plain_text"];
-          doc.data['feed_content'] = 'bs';
-          doc.data["date"] = Date.parse(e["properties"]["Created time"]["created_time"])
-          doc.data["tags"] = Array.new
-          e["properties"]["Topics"]["multi_select"].each do |topic|
-            doc.data["tags"].append(topic["name"])
-          end
-          doc.data['title'] = "Paper Summary: " + e["properties"]["Name"]["title"].first()["plain_text"]
-          # ["properties"]["Name"]["title"]["plain_text"]
-
-          doc.data['description'] = "";
+      if(status==200)
         
-          doc.data['redirect'] = e["url"];
-          site.collections['posts'].docs << doc
+      
+        page = response.body
+        results = JSON.parse(page)["results"]
+
+        
+        
+        results.each do |e|
+          slug = 'new_post'
+          path = site.in_source_dir("_posts/#{slug}.md")
+          # path = site.in_source_dir("_posts/newpost.md")
+          
+
+          if e["properties"]["Status"]["status"]["name"] != "Not started"
+            doc = Jekyll::Document.new(
+              path, { :site => site, :collection => site.collections['posts'] }
+            )
+            doc.data['external_source'] = e["properties"]["Authors"]["rich_text"].first()["plain_text"];
+            doc.data['feed_content'] = 'bs';
+            doc.data["date"] = Date.parse(e["properties"]["Created time"]["created_time"])
+            doc.data["tags"] = Array.new
+            e["properties"]["Topics"]["multi_select"].each do |topic|
+              doc.data["tags"].append(topic["name"])
+            end
+            doc.data['title'] = "Paper Summary: " + e["properties"]["Name"]["title"].first()["plain_text"]
+            # ["properties"]["Name"]["title"]["plain_text"]
+
+            doc.data['description'] = "";
+          
+            doc.data['redirect'] = e["url"];
+            site.collections['posts'].docs << doc
+          end
         end
       end
-   
 
       
       # if site.config['external_sources'] != nil
