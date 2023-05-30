@@ -59,7 +59,7 @@ module ExternalPosts
             )
             doc.data['external_source'] = e["properties"]["Authors"]["rich_text"].first()["plain_text"];
             doc.data['feed_content'] = 'bs';
-            doc.data["date"] = Date.parse(e["properties"]["Created time"]["created_time"])
+            doc.data["date"] = Time.parse(e["properties"]["Created time"]["created_time"])
             doc.data["tags"] = Array.new
             e["properties"]["Topics"]["multi_select"].each do |topic|
               doc.data["tags"].append(topic["name"])
