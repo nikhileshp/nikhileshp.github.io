@@ -13,7 +13,7 @@
   --global-theme-color: #0076df;
   --global-hover-color: rgba(83, 205, 245, 0.8901960784);
   --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: rgba(4, 12, 31, 0.9647058824);
+  --global-footer-bg-color: #030916;
   --global-footer-text-color: #e8e8e8;
   --global-footer-link-color: #ffffff;
   --global-distill-app-color: #828282;
@@ -48,7 +48,7 @@
 }
 
 html[data-theme=dark] {
-  --global-bg-color: rgba(4, 12, 31, 0.9647058824);
+  --global-bg-color: #030916;
   --global-code-bg-color: #2c3237;
   --global-text-color: #e8e8e8;
   --global-text-color-light: #e8e8e8;
