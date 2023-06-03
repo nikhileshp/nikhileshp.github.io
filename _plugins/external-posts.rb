@@ -48,17 +48,19 @@ module ExternalPosts
         
         
         results.each do |e|
-          slug = 'new_post'
-          path = site.in_source_dir("_posts/#{slug}.md")
+          p "...fetching #{e["url"]}"
+          slug = e["properties"]["Paper"]["files"].first()["name"].delete(".pdf")
+          path = e["url"]
           # path = site.in_source_dir("_posts/newpost.md")
           
 
           if e["properties"]["Status"]["status"]["name"] != "Not started"
+            
             doc = Jekyll::Document.new(
               path, { :site => site, :collection => site.collections['posts'] }
             )
             doc.data['external_source'] = e["properties"]["Authors"]["rich_text"].first()["plain_text"];
-            doc.data['feed_content'] = 'bs';
+            doc.data['feed_content'] = e["url"];
             doc.data["date"] = Time.parse(e["properties"]["Created time"]["created_time"])
             doc.data["tags"] = Array.new
             e["properties"]["Topics"]["multi_select"].each do |topic|
@@ -66,9 +68,12 @@ module ExternalPosts
             end
             doc.data['title'] = "Paper Summary: " + e["properties"]["Name"]["title"].first()["plain_text"]
             # ["properties"]["Name"]["title"]["plain_text"]
-
-            doc.data['description'] = "";
-          
+            
+            if  e["properties"]["Abstract"]["rich_text"].first()["text"]["content"].length > 381
+              doc.data['description'] = "<u><b>Abstract:</u></b> <font size=2>" + e["properties"]["Abstract"]["rich_text"].first()["text"]["content"].slice(0,380) + "...</font>"
+            else
+              doc.data['description'] = "<u><b>Abstract:</u></b> <small>" + e["properties"]["Abstract"]["rich_text"].first()["text"]["content"]+ "</small>"
+            end
             doc.data['redirect'] = e["url"];
             site.collections['posts'].docs << doc
           end
