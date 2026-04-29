@@ -40,42 +40,105 @@ article h5,
   margin-bottom: 0.7rem;
 }
 
-// ─── Navbar polish ──────────────────────────────────────────────────────────
-#navbar.navbar {
-  background: color-mix(in srgb, var(--global-bg-color) 92%, transparent);
+// ─── Navbar — match chess-clone exactly ────────────────────────────────────
+// Chess-clone nav: translucent blurred bg, neutral-grey links, blue/orange
+// accent on hover/active, small social icons, circular theme toggle.
+// These overrides intentionally beat al-folio's default .navbar.navbar-light
+// rules in _base.scss so the two sites look identical.
+
+#navbar.navbar,
+.navbar.navbar-light {
+  background: color-mix(in srgb, var(--global-bg-color) 94%, transparent) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--global-divider-color);
   padding: 0.5rem 1rem;
+  box-shadow: none;
+  opacity: 1;
 }
 
-.navbar-brand.social {
+.navbar.navbar-light .navbar-brand.social {
+  padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   gap: 0.6rem;
+  font-size: 1rem;
 
   a {
-    color: var(--global-text-color);
-    opacity: 0.75;
     font-size: 1.1rem;
     padding: 0.2rem 0.4rem;
-    transition: color 150ms ease, opacity 150ms ease;
+    color: var(--global-text-color-light);
+    transition: color 150ms ease;
+
+    i::before {
+      color: var(--global-text-color-light);
+      transition: color 150ms ease;
+    }
+
+    &:hover i::before {
+      color: var(--global-theme-color);
+    }
 
     &:hover {
       color: var(--global-theme-color);
-      opacity: 1;
     }
   }
 }
 
-.navbar-nav .nav-link {
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: var(--global-text-color-light);
   font-weight: 400;
   font-size: 0.95rem;
-  padding: 0.5rem 0.85rem !important;
+  padding: 0.5rem 0.85rem;
   transition: color 150ms ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
 }
 
-.navbar-nav .nav-item.active .nav-link {
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-theme-color);
   font-weight: 500;
+  background-color: inherit;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+// Theme toggle: chess-clone-style circular outlined button.
+.navbar.navbar-light .toggle-container {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.6rem;
+}
+
+#light-toggle {
+  background: transparent;
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, transform 150ms ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    transform: rotate(20deg);
+  }
+
+  i {
+    padding: 0 !important;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
 }
 
 // ─── Page header / post title ───────────────────────────────────────────────
