@@ -6,7 +6,7 @@
  * Themes
  ******************************************************************************/
 :root {
-  --global-bg-color: rgba(237, 250, 254, 0.8901960784);
+  --global-bg-color: rgba(237.232967033, 249.8351648352, 253.967032967, 0.8901960784);
   --global-code-bg-color: rgba(181, 9, 172, 0.05);
   --global-text-color: #000000;
   --global-text-color-light: #828282;
@@ -55,7 +55,7 @@ html[data-theme=dark] {
   --global-theme-color: #ffad41;
   --global-hover-color: #ffd399;
   --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: rgba(237, 250, 254, 0.8901960784);
+  --global-footer-bg-color: rgba(237.232967033, 249.8351648352, 253.967032967, 0.8901960784);
   --global-footer-text-color: #1C1C1D;
   --global-footer-link-color: #000000;
   --global-distill-app-color: #e8e8e8;
