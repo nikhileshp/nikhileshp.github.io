@@ -5,8 +5,6 @@
       value: Nikhilesh Prabhakar
     - name: Location
       value: Richardson, TX
-    - name: Email
-      value: prabhakar.nikhilesh@gmail.com
     - name: Languages
       value: English, Tamil, Hindi
 
@@ -27,7 +25,7 @@
         - CGPA - 9.23/10.
 
 - title: Coursework
-  type: nested_list
+  type: course_boxes
   contents:
     - title: Graduate (UT Dallas)
       items:
@@ -88,23 +86,13 @@
       description:
         - Introduction to Machine Learning (CSE4020).
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 2020
-      items:
-        - Jonsson School Graduate Fellowship, UT Dallas
-
 - title: Academic Interests
-  type: nested_list
+  type: course_boxes
   contents:
-    - title: Primary
-      items:
+    - items:
         - Neuro-symbolic AI
         - Interpretable Policy Learning
         - Reinforcement Learning
-    - title: Secondary
-      items:
         - Sample-efficient Learning
         - Multi-agent Systems
         - Planning

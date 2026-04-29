@@ -1,0 +1,16 @@
+<div class="course-boxes">
+  {% for content in entry.contents %}
+    <div class="course-group">
+      {% if content.title %}
+        <h5 class="course-group-title">{{ content.title }}</h5>
+      {% endif %}
+      {% if content.items %}
+        <div class="course-grid">
+          {% for subitem in content.items %}
+            <div class="course-box">{{ subitem }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

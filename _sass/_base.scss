@@ -374,6 +374,44 @@ footer.sticky-bottom {
       }
     }
   }
+
+  .course-boxes {
+    .course-group {
+      margin-bottom: 1.25rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .course-group-title {
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      color: var(--global-text-color);
+    }
+
+    .course-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .course-box {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 0.4rem;
+      background-color: var(--global-card-bg-color);
+      font-size: 0.9rem;
+      color: var(--global-text-color);
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border-color: var(--global-theme-color);
+        color: var(--global-theme-color);
+      }
+    }
+  }
 }
 
 // Repositories
