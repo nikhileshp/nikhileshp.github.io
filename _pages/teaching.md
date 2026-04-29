@@ -3,7 +3,7 @@ layout: page
 permalink: /teaching/
 title: teaching
 description: Few of the courses in which I worked as a TA
-nav: true
+nav: false
 nav_order: 5
 --- 
 
