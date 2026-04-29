@@ -6,18 +6,20 @@
  * Themes
  ******************************************************************************/
 :root {
-  --global-bg-color: rgba(237.232967033, 249.8351648352, 253.967032967, 0.8901960784);
+  --global-bg-color: #ffffff;
+  --global-bg-soft-color: #f6f6f4;
   --global-code-bg-color: rgba(181, 9, 172, 0.05);
-  --global-text-color: #000000;
-  --global-text-color-light: #828282;
+  --global-text-color: #212529;
+  --global-text-color-light: #4a4f55;
+  --global-text-color-mute: #828589;
   --global-theme-color: #0076df;
-  --global-hover-color: rgba(83, 205, 245, 0.8901960784);
+  --global-hover-color: #0076df;
   --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: #2c4046;
-  --global-footer-text-color: #e8e8e8;
-  --global-footer-link-color: #ffffff;
-  --global-distill-app-color: #828282;
-  --global-divider-color: rgba(24, 24, 24, 0.288);
+  --global-footer-bg-color: #ffffff;
+  --global-footer-text-color: #828589;
+  --global-footer-link-color: #4a4f55;
+  --global-distill-app-color: #828589;
+  --global-divider-color: #e1e1de;
   --global-card-bg-color: #ffffff;
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -234,12 +236,24 @@ blockquote {
 
 .profile.float-right {
   margin-left: 1rem;
+  margin-top: -6.5rem;
+  margin-right: -1.25rem;
 }
 
 .profile.float-left {
   margin-right: 1rem;
+  margin-top: -6.5rem;
+  margin-left: -1.25rem;
 }
 
+@media (max-width: 575.98px) {
+  .profile.float-right,
+  .profile.float-left {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 @media (min-width: 576px) {
   .profile {
     width: 30%;
@@ -404,6 +418,30 @@ footer.sticky-bottom {
   font-size: 0.9rem;
 }
 
+.cv-pdf-links {
+  font-size: 1rem;
+}
+.cv-pdf-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.4rem;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.cv-pdf-links a:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+.cv-pdf-links .cv-pdf-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .cv {
   margin-bottom: 40px;
 }
@@ -418,6 +456,21 @@ footer.sticky-bottom {
 .cv .card .list-group-item .badge {
   color: var(--global-card-bg-color) !important;
   background-color: var(--global-theme-color) !important;
+}
+.cv .grouped-time-table .experience-group {
+  margin-bottom: 1rem;
+}
+.cv .grouped-time-table .experience-group:last-child {
+  margin-bottom: 0;
+}
+.cv .grouped-time-table .experience-group-title {
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--global-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .cv .course-boxes .course-group {
   margin-bottom: 1.25rem;
@@ -1082,6 +1135,166 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   d-article d-contents nav {
     grid-column: none;
   }
+}
+/*******************************************************************************
+ * Chess-clone style polish
+ * Mirrors the visual feel of the chess-clone bot page across the main site.
+ * Theme-aware: uses --global-* CSS variables so dark mode still works.
+ ******************************************************************************/
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", "Roboto", serif;
+  letter-spacing: -0.005em;
+  color: var(--global-text-color);
+}
+
+h1.post-title {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+
+article h2,
+.post h2:not(.year):not(.category) {
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+article h5,
+.post h5 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+#navbar.navbar {
+  background: color-mix(in srgb, var(--global-bg-color) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand.social {
+  display: flex;
+  gap: 0.6rem;
+}
+.navbar-brand.social a {
+  color: var(--global-text-color);
+  opacity: 0.75;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+  transition: color 150ms ease, opacity 150ms ease;
+}
+.navbar-brand.social a:hover {
+  color: var(--global-theme-color);
+  opacity: 1;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  transition: color 150ms ease;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  font-weight: 500;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-description {
+  color: var(--global-text-color);
+  opacity: 0.78;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 0.6rem;
+  max-width: 50em;
+}
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-size: 0.8rem;
+  background: color-mix(in srgb, var(--global-bg-color) 92%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid var(--global-divider-color);
+  padding: 0.55rem 0;
+  text-align: center;
+}
+footer.fixed-bottom a,
+footer.sticky-bottom a {
+  border-bottom: 1px dotted var(--global-divider-color);
+  transition: color 150ms ease, border-color 150ms ease;
+}
+footer.fixed-bottom a:hover,
+footer.sticky-bottom a:hover {
+  color: var(--global-theme-color);
+  border-bottom-color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+}
+
+:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.eyebrow {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--global-text-color);
+  opacity: 0.65;
+  font-weight: 500;
+}
+
+.step-num {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.publications ol.bibliography li,
+.card,
+.course-box,
+.cv-pdf-links a {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.cv-pdf-links a:hover,
+.course-box:hover {
+  transform: translateY(-1px);
 }
 
 /*# sourceMappingURL=main.css.map */
