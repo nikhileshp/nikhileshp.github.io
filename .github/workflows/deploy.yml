@@ -26,6 +26,9 @@ jobs:
         ruby-version: '3.2.1'
         bundler-cache: true
     - name: Install and Build 🔧
+      env:
+        NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        JEKYLL_ENV: production
       run: |
         npm install -g mermaid.cli
         bundle exec jekyll build
