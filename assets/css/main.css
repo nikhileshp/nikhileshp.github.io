@@ -419,6 +419,36 @@ footer.sticky-bottom {
   color: var(--global-card-bg-color) !important;
   background-color: var(--global-theme-color) !important;
 }
+.cv .course-boxes .course-group {
+  margin-bottom: 1.25rem;
+}
+.cv .course-boxes .course-group:last-child {
+  margin-bottom: 0;
+}
+.cv .course-boxes .course-group-title {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: var(--global-text-color);
+}
+.cv .course-boxes .course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cv .course-boxes .course-box {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.4rem;
+  background-color: var(--global-card-bg-color);
+  font-size: 0.9rem;
+  color: var(--global-text-color);
+  transition: all 0.2s ease-in-out;
+}
+.cv .course-boxes .course-box:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
 
 @media (min-width: 768px) {
   .repo {
