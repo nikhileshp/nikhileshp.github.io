@@ -1176,6 +1176,10 @@ article h5,
   margin-bottom: 0.7rem;
 }
 
+body.fixed-top-nav {
+  padding-top: 70px;
+}
+
 #navbar.navbar,
 .navbar.navbar-light {
   background: color-mix(in srgb, var(--global-bg-color) 94%, transparent) !important;
@@ -1183,8 +1187,13 @@ article h5,
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--global-divider-color);
   padding: 0.5rem 1rem;
-  box-shadow: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   opacity: 1;
+}
+
+html[data-theme=dark] #navbar.navbar,
+html[data-theme=dark] .navbar.navbar-light {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .navbar.navbar-light .navbar-brand.social {
