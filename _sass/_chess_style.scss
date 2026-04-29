@@ -46,6 +46,12 @@ article h5,
 // These overrides intentionally beat al-folio's default .navbar.navbar-light
 // rules in _base.scss so the two sites look identical.
 
+// Match chess-clone's fixed-nav vertical breathing room (chess uses 70px on
+// body; al-folio defaults to 56px which made the content sit higher).
+body.fixed-top-nav {
+  padding-top: 70px;
+}
+
 #navbar.navbar,
 .navbar.navbar-light {
   background: color-mix(in srgb, var(--global-bg-color) 94%, transparent) !important;
@@ -53,8 +59,16 @@ article h5,
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--global-divider-color);
   padding: 0.5rem 1rem;
-  box-shadow: none;
+  // Subtle drop shadow matching MDB Bootstrap's default that the chess page
+  // inherits. al-folio's _base.scss explicitly kills this; we put it back.
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   opacity: 1;
+}
+
+html[data-theme='dark'] #navbar.navbar,
+html[data-theme='dark'] .navbar.navbar-light {
+  // Slightly stronger shadow on dark to keep the same edge-definition feel.
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .navbar.navbar-light .navbar-brand.social {
