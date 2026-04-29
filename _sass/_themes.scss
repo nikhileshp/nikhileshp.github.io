@@ -3,18 +3,21 @@
  ******************************************************************************/
 
 :root {
-  --global-bg-color: #{$light-cyan-color};
+  // chess-clone-aligned light palette
+  --global-bg-color: #{$white-color};            // #ffffff
+  --global-bg-soft-color: #f6f6f4;
   --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$blue-color};
-  --global-hover-color: #{$cyan-color};
+  --global-text-color: #212529;                   // chess-clone --fg
+  --global-text-color-light: #4a4f55;             // chess-clone --fg-soft
+  --global-text-color-mute: #828589;              // chess-clone --fg-mute
+  --global-theme-color: #{$blue-color};           // #0076df
+  --global-hover-color: #{$blue-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$blue-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(24, 24, 24, 0.288);
+  --global-footer-bg-color: #{$white-color};
+  --global-footer-text-color: #828589;
+  --global-footer-link-color: #4a4f55;
+  --global-distill-app-color: #828589;
+  --global-divider-color: #e1e1de;                // chess-clone --rule
   --global-card-bg-color: #{$white-color};
 
   --global-tip-block: #42b983;

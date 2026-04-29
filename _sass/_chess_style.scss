@@ -1,0 +1,172 @@
+/*******************************************************************************
+ * Chess-clone style polish
+ * Mirrors the visual feel of the chess-clone bot page across the main site.
+ * Theme-aware: uses --global-* CSS variables so dark mode still works.
+ ******************************************************************************/
+
+// ─── Typography ──────────────────────────────────────────────────────────────
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", "Roboto", serif;
+  letter-spacing: -0.005em;
+  color: var(--global-text-color);
+}
+
+h1.post-title {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+
+article h2,
+.post h2:not(.year):not(.category) {
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+article h5,
+.post h5 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+// ─── Navbar polish ──────────────────────────────────────────────────────────
+#navbar.navbar {
+  background: color-mix(in srgb, var(--global-bg-color) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand.social {
+  display: flex;
+  gap: 0.6rem;
+
+  a {
+    color: var(--global-text-color);
+    opacity: 0.75;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.4rem;
+    transition: color 150ms ease, opacity 150ms ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+      opacity: 1;
+    }
+  }
+}
+
+.navbar-nav .nav-link {
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  transition: color 150ms ease;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  font-weight: 500;
+}
+
+// ─── Page header / post title ───────────────────────────────────────────────
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-description {
+  color: var(--global-text-color);
+  opacity: 0.78;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 0.6rem;
+  max-width: 50em;
+}
+
+// ─── Footer polish ──────────────────────────────────────────────────────────
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-size: 0.8rem;
+  background: color-mix(in srgb, var(--global-bg-color) 92%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid var(--global-divider-color);
+  padding: 0.55rem 0;
+  text-align: center;
+
+  a {
+    border-bottom: 1px dotted var(--global-divider-color);
+    transition: color 150ms ease, border-color 150ms ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+// ─── Selection / focus polish ───────────────────────────────────────────────
+::selection {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+}
+
+:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+// ─── Reusable utilities (eyebrow labels, step badges) ───────────────────────
+.eyebrow {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--global-text-color);
+  opacity: 0.65;
+  font-weight: 500;
+}
+
+.step-num {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+// ─── Card hover lift (publications, project cards, course boxes) ────────────
+.publications ol.bibliography li,
+.card,
+.course-box,
+.cv-pdf-links a {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+// Subtle lift on hoverable cards (only where it doesn't conflict with existing
+// hover styles).
+.cv-pdf-links a:hover,
+.course-box:hover {
+  transform: translateY(-1px);
+}

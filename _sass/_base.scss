@@ -131,10 +131,23 @@ blockquote {
 
 .profile.float-right {
   margin-left: 1rem;
+  margin-top: -6.5rem;
+  margin-right: -1.25rem;
 }
 
 .profile.float-left {
   margin-right: 1rem;
+  margin-top: -6.5rem;
+  margin-left: -1.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .profile.float-right,
+  .profile.float-left {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 576px) {
@@ -357,6 +370,33 @@ footer.sticky-bottom {
 
 // CV
 
+.cv-pdf-links {
+  font-size: 1rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+  }
+
+  .cv-pdf-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}
+
 .cv {
   margin-bottom: 40px;
 
@@ -372,6 +412,26 @@ footer.sticky-bottom {
         color: var(--global-card-bg-color) !important;
         background-color: var(--global-theme-color) !important;
       }
+    }
+  }
+
+  .grouped-time-table {
+    .experience-group {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .experience-group-title {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      color: var(--global-text-color);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
   }
 

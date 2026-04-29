@@ -15,14 +15,14 @@
       institution: University of Texas at Dallas
       year: 2020 - Present
       description:
-        - Advisor: Dr. Sriraam Natarajan (StARLing Lab).
-        - Jonsson School Graduate Fellowship.
+        - "Advisor: Dr. Sriraam Natarajan (StARLing Lab)."
+        - "Jonsson School Graduate Fellowship."
         - "Research focus: Neuro-symbolic AI, Interpretable Policy Learning, Reinforcement Learning."
     - title: B.Tech. in Computer Science
       institution: Vellore Institute of Technology
       year: 2016 - 2020
       description:
-        - CGPA - 9.23/10.
+        - "CGPA - 9.23/10."
 
 - title: Coursework
   type: course_boxes
@@ -45,47 +45,6 @@
         - Theory of Computation
         - Compiler Design
 
-- title: Research Experience
-  type: time_table
-  contents:
-    - title: Graduate Research Assistant
-      institution: StARLing Lab, University of Texas at Dallas
-      year: 2021 - Present
-      description:
-        - Developed neuro-symbolic and relational RL frameworks for multi-agent systems, resulting in publications at AAMAS, AAAI, and FUSION.
-        - Co-developed research with collaborators at Oregon State University and TU Darmstadt.
-    - title: Workflow Chair
-      institution: AAAI-24, Vancouver
-      year: 2024
-      description:
-        - Managed paper workflows for the 38th AAAI Conference.
-    - title: ML Consultant
-      institution: Careband
-      year: Summer 2021
-      description:
-        - Activity recognition from accelerometer data for wearable deployment.
-    - title: SDE Intern
-      institution: Referral Yogi Technologies
-      year: Summer 2018
-      description:
-        - Built video transcription module using Ruby on Rails and Google Speech API.
-        - Integrated batch transcription with sentiment and profile analysis.
-
-- title: Teaching Experience
-  type: time_table
-  contents:
-    - title: Graduate Teaching Assistant
-      institution: University of Texas at Dallas
-      year: 2021 - 2023
-      description:
-        - Machine Learning (CS6375).
-        - Digital Logic (CS4341).
-    - title: Undergraduate Teaching Assistant
-      institution: Vellore Institute of Technology
-      year: Fall 2019
-      description:
-        - Introduction to Machine Learning (CSE4020).
-
 - title: Academic Interests
   type: course_boxes
   contents:
@@ -96,6 +55,40 @@
         - Sample-efficient Learning
         - Multi-agent Systems
         - Planning
+
+- title: Experience
+  type: grouped_time_table
+  contents:
+    - title: Research
+      items:
+        - title: Graduate Research Assistant
+          institution: StARLing Lab, University of Texas at Dallas
+          year: 2021 - Present
+          summary: Developed neuro-symbolic and relational RL frameworks for multi-agent systems, resulting in publications at AAMAS, AAAI, and FUSION.
+    - title: Professional
+      items:
+        - title: Workflow Chair
+          institution: AAAI-24, Vancouver
+          year: 2024
+          summary: Managed paper workflows for the 38th AAAI Conference.
+        - title: ML Consultant
+          institution: Careband
+          year: Summer 2021
+          summary: Activity recognition from accelerometer data for wearable deployment.
+        - title: SDE Intern
+          institution: Referral Yogi Technologies
+          year: Summer 2018
+          summary: Built a video transcription module using Ruby on Rails and the Google Speech API, integrated with batch sentiment and profile analysis.
+    - title: Teaching
+      items:
+        - title: Graduate Teaching Assistant
+          institution: University of Texas at Dallas
+          year: 2021 - 2023
+          summary: Machine Learning (CS6375); Digital Logic (CS4341).
+        - title: Undergraduate Teaching Assistant
+          institution: Vellore Institute of Technology
+          year: Fall 2019
+          summary: Introduction to Machine Learning (CSE4020).
 
 - title: Skills
   type: list

@@ -5,7 +5,21 @@ layout: default
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">{{ page.title }} {% if page.cv_pdf %}<a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fas fa-file-pdf"></i></a>{% endif %}</h1>
+            <h1 class="post-title">
+              {{ page.title }}
+              <span class="cv-pdf-links float-right">
+                {% if page.cv_pdf %}
+                  <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer" title="One-page CV (PDF)">
+                    <i class="fas fa-file-pdf"></i><span class="cv-pdf-label">1-page</span>
+                  </a>
+                {% endif %}
+                {% if page.cv_pdf_full %}
+                  <a href="{{ page.cv_pdf_full | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer" title="Full CV (2 pages, PDF)">
+                    <i class="fas fa-file-pdf"></i><span class="cv-pdf-label">2-page</span>
+                  </a>
+                {% endif %}
+              </span>
+            </h1>
             <p class="post-description">{{ page.description }}</p>
           </header>
 
@@ -25,6 +39,8 @@ layout: default
                    {% include cv/time_table.html %}
                   {% elsif entry.type == "course_boxes" %}
                    {% include cv/course_boxes.html %}
+                  {% elsif entry.type == "grouped_time_table" %}
+                   {% include cv/grouped_time_table.html %}
                   {% else %}
                     {{ entry.contents }}
                   {% endif %}
