@@ -1,14 +1,12 @@
-<!-- ---
+---
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A collection of research and personal projects.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
-horizontal: false 
-
-Uncomment this and rename Projects to use-->
+display_categories: [research, fun]
+horizontal: false
 ---
 
 <!-- pages/projects.md -->
