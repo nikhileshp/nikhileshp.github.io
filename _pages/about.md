@@ -19,30 +19,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm a CS Ph.D. student at the University of Texas at Dallas working in StARLing Lab under the guidance of Dr. Sriraam Natarajan. My areas of interest include Planning and Reinforcement Learning and Neuro-symbolic Learning. 
+I'm a CS Ph.D. student at the University of Texas at Dallas working in the StARLing Lab under the guidance of Dr. Sriraam Natarajan. My research focuses on Reinforcement Learning and Neurosymbolic AI, with recent interests in multi-agent drone coordination.
+
+I'm currently looking for Summer 2026 research internships or co-op positions.
 
 If you would like to collaborate, please feel free to reach out through [email](mailto:nikhilesh.prabhakar@utdallas.edu).
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
