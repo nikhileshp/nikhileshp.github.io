@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm a CS Ph.D. student at the University of Texas at Dallas working in the StARLing Lab under the guidance of Dr. Sriraam Natarajan. My research focuses on Reinforcement Learning and Neurosymbolic AI, with interests in interpretability, multi-agent systems, and robotics. My recent work uses LLMs to generate formal planning models for multi-UAV coverage tasks under partial observability.
+I'm a CS Ph.D. student at the University of Texas at Dallas working in the StARLing Lab under the guidance of Dr. Sriraam Natarajan. My research focuses on Reinforcement Learning and Neurosymbolic AI, with interests in interpretability, multi-agent systems, and robotics. My latest project uses LLMs to generate formal planning models for multi-UAV coverage tasks under partial observability.
 
 I'm currently looking for Summer 2026 research internships or co-op positions.
 
