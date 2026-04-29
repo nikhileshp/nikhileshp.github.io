@@ -25,6 +25,16 @@ jobs:
       with:
         ruby-version: '3.2.1'
         bundler-cache: true
+    - name: Debug secret resolution
+      env:
+        NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      run: |
+        echo "NOTION_API_KEY length: ${#NOTION_API_KEY}"
+        if [ -z "$NOTION_API_KEY" ]; then
+          echo "RESULT: secret did NOT resolve (empty/missing)"
+        else
+          echo "RESULT: secret resolved (non-empty); first 4 chars: ${NOTION_API_KEY:0:4}***"
+        fi
     - name: Install and Build 🔧
       env:
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
