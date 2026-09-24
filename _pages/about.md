@@ -23,6 +23,4 @@ I'm a CS Ph.D. student at the University of Texas at Dallas, working in the [StA
 
 Lately I've been thinking about how much structure an agent can borrow instead of learn: external knowledge as a signal for how a task decomposes, skills and policies that generalize beyond the tasks they were learned on, and asking an expert the right questions when demonstrations are scarce.
 
-Outside the lab I play blitz chess. A Maia2 model fine-tuned on my games lives under [play my chess bot](/chess-clone/) if you want a game.
-
 If you would like to collaborate, please feel free to reach out through [email](mailto:nikhilesh.prabhakar@utdallas.edu).
