@@ -5,13 +5,19 @@
  ******************************************************************************/
 
 // ─── Typography ─────────────────────────────────────────────────────────────
-// MDB Bootstrap forces Roboto sans-serif on body AND on .h1/.h2/... helpers
-// with high specificity. We use html-level selectors + !important on the
-// font-family so headings reliably render in Roboto Slab to match the chess
-// page exactly.
+// Three roles, loaded in _includes/head.html from Google Fonts:
+//   titles / headings  -> "Google Sans"
+//   body text          -> "Roboto"
+//   code               -> "Google Sans Code"
+// MDB Bootstrap forces Roboto on body AND on .h1/.h2/... helpers with high
+// specificity, so we use html-level selectors + !important on font-family.
+
+$font-title: "Google Sans", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-text: "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-code: "Google Sans Code", "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
 html body {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif !important;
+  font-family: $font-text !important;
   font-weight: 400;
   line-height: 1.7;
 }
@@ -22,14 +28,44 @@ html body h3,
 html body h4,
 html body h5,
 html body h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto Slab", "Roboto", serif !important;
+.h1, .h2, .h3, .h4, .h5, .h6,
+html body .navbar-brand,
+html body .post-title,
+html body .header-bar h1,
+html body .card-title,
+html body .publications .title,
+html body .projects .card-title {
+  font-family: $font-title !important;
   letter-spacing: -0.005em;
   color: var(--global-text-color);
 }
 
+// Google Sans is wider than Roboto Slab was; give publication titles a
+// touch more weight so they still read as titles inside the card.
+html body .publications .title {
+  font-weight: 500;
+}
+
+html body pre,
+html body code,
+html body kbd,
+html body samp,
+html body .highlight,
+html body .highlight pre,
+html body figure.highlight {
+  font-family: $font-code !important;
+}
+
+// Keep code slightly smaller than body text; Google Sans Code sits large.
+html body code {
+  font-size: 0.9em;
+}
+html body pre code {
+  font-size: 0.875rem;
+}
+
 h1.post-title {
-  font-weight: 300;
+  font-weight: 400; // Google Sans ships 400/500/700 only
   font-size: 2.5rem;
   margin-bottom: 0.4rem;
 }
@@ -219,7 +255,7 @@ footer.sticky-bottom {
 
 // ─── Reusable utilities (eyebrow labels, step badges) ───────────────────────
 .eyebrow {
-  font-family: "Roboto", sans-serif;
+  font-family: $font-text;
   font-size: 0.72rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -237,8 +273,8 @@ footer.sticky-bottom {
   background: var(--global-theme-color);
   color: var(--global-bg-color);
   text-align: center;
-  font-family: "Roboto Slab", serif;
-  font-weight: 400;
+  font-family: $font-title;
+  font-weight: 500;
   font-size: 0.85rem;
   margin-right: 0.5rem;
   vertical-align: middle;
